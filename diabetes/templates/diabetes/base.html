@@ -1,0 +1,29 @@
+{% load bootstrap5 %}
+{% load static %}
+
+<html>
+    <head>
+        <title>{% block title %}{% endblock title %}</title>
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+
+        {% block default_script %}
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        {% endblock default_script %}
+        
+        {% block css %}{% endblock css %}
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'diabetes:diabetes' %}">Diabetes Logistic Regression</a>
+            </div>
+        </nav>
+        <main class="container">
+            {% block content %}
+
+            {% endblock content %}
+        </main>
+    </body>
+    {% block script %}{% endblock script %}
+</html>
